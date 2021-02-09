@@ -125,7 +125,7 @@ static int handle_value(int obs_index, readstat_variable_t *variable, readstat_v
         char days_str[255];
         readstat_dta_days_string(days, days_str, sizeof(days_str)-1);
         fprintf(mod_ctx->out_file, "%s", days_str);
-    } else if (type == READSTAT_TYPE_DOUBLE && format && 0 == strncmp("EDATE40", format, strlen("EDATE40"))) {
+    } else if (format && 0 == strncmp("EDATE40", format, strlen("EDATE40"))) {
         double v = readstat_double_value(value);
         char date_str[255];
         char *s = readstat_sav_date_string(v, date_str, sizeof(date_str)-1);
